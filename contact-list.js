@@ -1,13 +1,6 @@
 //lista de contactos
 
 let contactList = [
-  "Luna Lunera",
-  "Maicol Giovany",
-  "Sol Solecito",
-  "Marte Zat",
-];
-
-let contactList2 = [
   {
     id: 1,
     nombre: "Luna",
@@ -60,7 +53,7 @@ let contactList2 = [
 
 //Generar id
 
-let lastItem = contactList2[contactList2.length - 1];
+let lastItem = contactList[contactList.length - 1];
 let newId = lastItem.id;
 
 newId++;
@@ -80,7 +73,7 @@ let newContact = {
   ],
 };
 
-const addContact = contactList2.push(newContact);
+const addContact = contactList.push(newContact);
 
 //Funcion para eliminar contacto
 
@@ -88,15 +81,15 @@ let deleteName = prompt("Escribe el nombre del contacto a eliminar");
 let deleteLastName = prompt("Escribe el apellido del contacto a eliminar");
 
 if (
-  contactList2.filter(
+  contactList.filter(
     (i) => i.nombre === deleteName && i.apellido === deleteLastName
   ).length
 ) {
-  const finalList = contactList2.filter(
+  const finalList = contactList.filter(
     (i) => i.nombre !== deleteName && i.apellido !== deleteLastName
   );
   console.log(finalList);
 } else {
   alert("Este nombre no esta en la lista");
-  console.log(contactList2);
+  console.log(contactList);
 }
