@@ -89,7 +89,20 @@ if (
     (i) => i.nombre !== deleteName && i.apellido !== deleteLastName
   );
   console.log(finalList);
+  alert("Contacto eliminado");
 } else {
   alert("Este nombre no esta en la lista");
   console.log(contactList);
 }
+
+contactList.sort(function (a, b) {
+  if (a.id > b.id) {
+    return 1;
+  }
+  if (a.id < b.id) {
+    return -1;
+  }
+  return 0;
+});
+
+console.log(contactList);
